@@ -1,11 +1,3 @@
-"""
-The classic game of flappy bird. Make with python
-and pygame. Features pixel perfect collision using masks :o
-
-Date Modified:  Jul 30, 2019
-Author: Tech With Tim
-Estimated Work Time: 5 hours (1 just for that damn collision)
-"""
 import pygame
 import random
 import os
@@ -41,12 +33,7 @@ class Bird:
     ANIMATION_TIME = 5
 
     def __init__(self, x, y):
-        """
-        Initialize the object
-        :param x: starting x pos (int)
-        :param y: starting y pos (int)
-        :return: None
-        """
+        
         self.x = x
         self.y = y
         self.tilt = 0  # degrees to tilt
@@ -399,10 +386,6 @@ def eval_genomes(genomes, config):
 
         draw_window(WIN, birds, pipes, base, score, gen, pipe_ind)
 
-        # break if score gets large enough
-        '''if score > 20:
-            pickle.dump(nets[0],open("best.pickle", "wb"))
-            break'''
 
 
 def run(config_file):
@@ -432,9 +415,7 @@ def run(config_file):
 
 
 if __name__ == '__main__':
-    # Determine path to configuration file. This path manipulation is
-    # here so that the script will run successfully regardless of the
-    # current working directory.
+    # Determine path to configuration file.
     local_dir = os.path.dirname(__file__)
     config_path = os.path.join(local_dir, 'config.txt')
     run(config_path)
